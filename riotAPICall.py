@@ -9,7 +9,7 @@ if getUserID.status_code == 200:
     userIDInfo = json.loads(getUserID.text)
     accountId = userIDInfo["accountId"]
 else:
-    print("Error in getting userID! Response code " + getUserID.status_code)
+    print("Error in getting userID! Response code " + str(getUserID.status_code))
 
 getMatchesURL = "https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/" + accountId +"?api_key=" + constants.riotAPI
 getMatches = requests.get(getMatchesURL)
@@ -19,12 +19,12 @@ else:
     print("Error in getting matches! Response code " + getMatches.status_code)
 
 
-
 gameIdList = []
+n = 0
 
-for n in range(100):
-    if datetime.datetime.fromtimestamp(gameMatchesInfo["matches"][n]["timestamp"]/1000.0) > datetime.datetime.fromtimestamp(constants.timeFilter/1000.0):
+while datetime.datetime.fromtimestamp(gameMatchesInfo["matches"][n]["timestamp"]/1000.0) > datetime.datetime.fromtimestamp(constants.timeFilter/1000.0):
         gameIdList.append(gameMatchesInfo["matches"][n]["gameId"])
+        n += 1
 
 gameTimeList = []
 

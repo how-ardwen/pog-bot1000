@@ -1,9 +1,9 @@
 import datetime
 import time
 
-riotAPI = "RGAPI-29b20258-8841-46c9-9fa1-ec6e0873a5fd"
+riotAPI = input("Enter riotAPI key: ")
 
-summonerName = input("Enter summoner name: ")
+summonerName = input("Enter Summoner Name: ")
 summonerName = summonerName.replace(" ", "%20")
 
 timeLength = input("Enter time length: ")
