@@ -11,8 +11,8 @@ timePlayedMinutes = int(timePlayed/60)
 summonerName = constants.summonerName.replace("%20", " ")
 
 if timePlayedMinutes == 0:
-    print("Holy Shit! " + summonerName + "has played 0 minutes of league in the past " + constants.timeLength + " days!!! I bet " + summonerName + " gets bitches!")
+    print(f"Holy Shit! {summonerName} has played 0 minutes of league in the past {constants.timeLength} days!!! I bet " + summonerName + " gets bitches!")
 elif 1 > timePlayedMinutes> 0:
-    print(summonerName + " has played " + str(riotAPICall.n) + " games, " + str(timePlayedMinutes) + " minutes of league in the past " + constants.timeLength + " days!")
+    print(summonerName + " has played " + str(timePlayedMinutes) + " minutes of league in the past " + constants.timeLength + " days!")
 else:
-    print(summonerName + " has played " + str(riotAPICall.n) + " games, " + str(timePlayedMinutes) + " minutes of league in the past " + constants.timeLength + " days!!")
+    print(summonerName + " has played " + str(timePlayedMinutes) + " minutes of league in the past " + constants.timeLength + " days!!")
